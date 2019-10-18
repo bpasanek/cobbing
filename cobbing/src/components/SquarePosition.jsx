@@ -9,7 +9,7 @@ import { useDrop } from 'react-dnd';
 export default function SquarePosition({ x, y, children }) {
   const blue = (x + y) % 2 === 1
   const [, drop] = useDrop({
-    accept: [ PieceTypes.WAN, PieceTypes.DO],
+    accept: [ PieceTypes.WAN, PieceTypes.DO, PieceTypes.TREE, PieceTypes.FEAR, PieceTypes.FIFE, PieceTypes.SEEKS, PieceTypes.SIPHON, PieceTypes.EAT, PieceTypes.NEIGHING, PieceTypes.DEN, PieceTypes.ELEPHAN, PieceTypes.TWIRL],
     drop: () => movePiece(x, y),
   })
 
