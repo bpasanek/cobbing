@@ -2,9 +2,9 @@ import React from 'react'
 import { PieceTypes } from './Board'
 import { useDrag } from 'react-dnd'
 
-export default function Do() {
+export default function Seeks() {
   const [, drag] = useDrag({
-    item: { type: PieceTypes.DO },
+    item: { type: PieceTypes.SEEKS },
     // collect: monitor => ({
     //   isDragging: !!monitor.isDragging(),
     // }),
@@ -18,7 +18,7 @@ export default function Do() {
         cursor: 'move',
       }}
     >
-        Do
+        Seeks
     </div>
   )
 }

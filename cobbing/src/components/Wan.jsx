@@ -14,7 +14,7 @@ export default function Wan() {
     <div
       ref={drag}
       style={{
-        fontSize: '15',
+        fontSize: '2',
         cursor: 'move',
       }}
     >
@@ -22,3 +22,4 @@ export default function Wan() {
     </div>
   )
 }
+

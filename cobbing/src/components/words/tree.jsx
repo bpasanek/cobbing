@@ -2,9 +2,9 @@ import React from 'react'
 import { PieceTypes } from './Board'
 import { useDrag } from 'react-dnd'
 
-export default function Do() {
+export default function tree() {
   const [, drag] = useDrag({
-    item: { type: PieceTypes.DO },
+    item: { type: PieceTypes.WAN },
     // collect: monitor => ({
     //   isDragging: !!monitor.isDragging(),
     // }),
@@ -14,11 +14,11 @@ export default function Do() {
     <div
       ref={drag}
       style={{
-        fontSize: '2',
+        fontSize: '15',
         cursor: 'move',
       }}
     >
-        Do
+        tree
     </div>
   )
 }

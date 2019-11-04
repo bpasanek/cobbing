@@ -1,6 +1,7 @@
 import React from 'react';
 import SquarePosition from './SquarePosition';
 
+import Wan from './Wan';
 import Do from './Do';
 import Eat from './Eat';
 import Elephan from './Elephan';
@@ -12,7 +13,6 @@ import Siphon from './Siphon';
 import Tree from './Tree';
 import Twirl from './Twirl';
 import Den from './Den';
-import Wan from './Wan';
 
 
 import { DndProvider } from 'react-dnd';
@@ -20,6 +20,7 @@ import { movePiece } from './Game';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 export const PieceTypes = {
+  WAN: 'Wan',
   DO: 'Do',
   EAT: 'Eat',
   ELEPHAN: 'Elephan',
@@ -31,7 +32,6 @@ export const PieceTypes = {
   TREE: 'Tree',
   TWIRL: 'Twirl',
   DEN: 'Den',
-  WAN: 'Wan',
 
 }
 
@@ -47,22 +47,18 @@ function renderSquare(i, [pieceX, pieceY]) {
         height: '12.5vh'
       }}>
       <SquarePosition x={x} y={y}>
-        {renderDo(x, y, [pieceX, pieceY])}
-        {renderEat(x, y, [pieceX, pieceY])}
-        {renderElephan(x, y, [pieceX, pieceY])}
-        {renderFear(x, y, [pieceX, pieceY])}
-        {renderFife(x, y, [pieceX, pieceY])}
-        {renderNeighing(x, y, [pieceX, pieceY])}
-        {renderSeeks(x, y, [pieceX, pieceY])}
-        {renderSiphon(x, y, [pieceX, pieceY])}
-        {renderTree(x, y, [pieceX, pieceY])}
-        {renderTwirl(x, y, [pieceX, pieceY])}
-        {renderDen(x, y, [pieceX, pieceY])}
         {renderWan(x, y, [pieceX, pieceY])}
-
+        {renderDo(x, y, [pieceX, pieceY])}
       </SquarePosition>
     </div>
   )
+}
+
+function renderWan(x, y, [pieceX, pieceY]) {
+  if (pieceX === x && pieceY === y) {
+    return <Wan />
+  }
+  return null
 }
 
 function renderDo(x, y, [pieceX, pieceY]) {
@@ -138,13 +134,6 @@ function renderTwirl(x, y, [pieceX, pieceY]) {
 function renderDen(x, y, [pieceX, pieceY]) {
   if (pieceX === x && pieceY === y) {
     return <Den />
-  }
-  return null
-}
-
-function renderWan(x, y, [pieceX, pieceY]) {
-  if (pieceX === x && pieceY === y) {
-    return <Wan />
   }
   return null
 }
