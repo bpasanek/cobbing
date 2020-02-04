@@ -18,7 +18,7 @@ export default function Fife() {
         cursor: 'move',
       }}
     >
-        Do
+        Fife
     </div>
   )
 }
